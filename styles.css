@@ -17,3 +17,12 @@ html {
     font-size: 16pt;
     color: var(--text-color);
 }
+
+body {
+    min-height: 100vh;  /* it can grow when needed*/
+    padding: 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
