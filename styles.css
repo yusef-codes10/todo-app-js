@@ -9,7 +9,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -41,4 +40,19 @@ h1 {
     width: 700px;
     max-width: 100%; 
     /* ! on smaller devices the width will be 100% and on bigger devices it can still be 700px  */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#todoInput {
+    box-sizing: border-box;  /* total size stays consistant even when adding padding or borders */
+    padding: 12px 20px;
+    width: 100%;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit; /* inherit all font settings previously defined*/ 
+    color: var(--text-color);
+    caret-color: var(--accent-color);  /* cursor color*/
 }
