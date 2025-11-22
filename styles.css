@@ -52,7 +52,83 @@ h1 {
     background: none;
     border: 2px solid var(--secondary-color);
     border-radius: 1000px;
-    font: inherit; /* inherit all font settings previously defined*/ 
+    font: inherit; /* inherit all font settings previously defined in html*/ 
     color: var(--text-color);
     caret-color: var(--accent-color);  /* cursor color*/
+}
+
+#todoInput:focus {
+    outline: none;
+}
+
+form {
+    position: relative;
+}
+
+#addBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background);
+    cursor: pointer;
+}
+
+.todo {
+    margin-bottom: 10px;
+    padding: 0 16px;  /* 0 padding intentionaly*/ 
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.todo .todo-text {
+    padding: 15px;  /*! we want the text to set the height of the todo that's why todo had padding of 0*/ 
+    padding-right: 0;
+    flex-grow: 1;   /* this will always push the delete btn to the further left regardless of the todo text*/ 
+
+}
+
+.delete-btn {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: ease .2s;
+}
+
+.delete-btn:hover {
+    color: #ff0033;
+}
+
+.custom-checkbox {
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* pervent it from squeezing*/ 
+}
+
+.transparent-icon {
+    color: transparent;
+}
+
+/* style the checkbox */
+input[type="checkbox"]:checked ~ .custom-checkbox{  /*sibling selector ~*/
+    background-color: var(--accent-color);
+
 }
