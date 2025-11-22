@@ -36,3 +36,9 @@ h1 {
     text-align: center;
     color: var(--accent-color);
 }
+
+.wrapper {
+    width: 700px;
+    max-width: 100%; 
+    /* ! on smaller devices the width will be 100% and on bigger devices it can still be 700px  */
+}
