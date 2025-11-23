@@ -35,7 +35,7 @@ function createTodoItem(todo, todoIndex) {
   const todoId = "todo-" + todoIndex;
   const todoLi = document.createElement("li");
   todoLi.classList = "todo";
-  todo.innerHTML = `
+  todoLi.innerHTML = `
               <input type="checkbox" name="" id="${todoId}" />
           <label for="${todoId}" class="custom-checkbox">
             <i class="bi bi-check transparent-icon"></i>
