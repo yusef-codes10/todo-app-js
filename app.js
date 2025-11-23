@@ -7,3 +7,8 @@ const todoInput = document.getElementById('todoInput');
 const todoListUl = document.getElementById('todoList');
 
 let allTodos =[];  // empty array to stor todos
+
+todoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    window.alert('working')
+})
