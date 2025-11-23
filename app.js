@@ -15,6 +15,17 @@ todoForm.addEventListener('submit', (e) => {
 
 function addTodo() {
     const todoText = todoInput.value.trim(); // always trim
-    allTodos.push(todoText);
-    console.log(allTodos);
+    if (todoText.length > 0) {
+        allTodos.push(todoText);
+        createTodoItem(todoText); // to add to the page
+        todoInput.value = '';   
+        console.log(todoText);
+    }
+}
+
+function createTodoItem(todo) {
+    const todoLi = document.createElement('li');
+    todoLi.innerText = todo;
+    todoLi.classList.add('todo');
+    todoListUl.append(todoLi);
 }
