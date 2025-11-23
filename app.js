@@ -14,6 +14,7 @@ todoForm.addEventListener('submit', (e) => {
 })
 
 function addTodo() {
-    const todoText = todoInput.value;
-    window.alert(todoText)
+    const todoText = todoInput.value.trim(); // always trim
+    allTodos.push(todoText);
+    console.log(allTodos);
 }
