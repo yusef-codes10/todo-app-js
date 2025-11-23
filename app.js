@@ -10,5 +10,10 @@ let allTodos =[];  // empty array to stor todos
 
 todoForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    window.alert('working')
+    addTodo(); // add a saparate function is best
 })
+
+function addTodo() {
+    const todoText = todoInput.value;
+    window.alert(todoText)
+}
