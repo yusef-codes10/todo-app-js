@@ -49,6 +49,7 @@ function createTodoItem(todo, todoIndex) {
             <i class="bi bi-trash3"></i>
           </button>
     `;
+    const deleteBtn = todoLi.querySelector('.delete-btn');   // every li has its own btn
   return todoLi;
 }
 
