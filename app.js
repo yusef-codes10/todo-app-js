@@ -69,3 +69,5 @@ function getTodos() {
 // TODO set interval func must be checked
 // TODO innerHTML is valunarble to html injection
 // TODO we have to save todos, then load them from the storage
+
+// TODO next remove btn
