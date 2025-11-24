@@ -7,7 +7,7 @@ const todoInput = document.getElementById("todoInput");
 const todoListUl = document.getElementById("todoList");
 
 let allTodos = getTodos(); // empty array to stor todos
-console.log(allTodos);
+updateTodoList();
 
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -54,12 +54,16 @@ function createTodoItem(todo, todoIndex) {
 
 function saveTodos() {
   const todosJson = JSON.stringify(allTodos);
-  localStorage.setItem('todos', allTodos); //! only string values can be stored in the local storage
+  localStorage.setItem("todos", todosJson); //! only string values can be stored in the local storage
 }
 
 function getTodos() {
-  const todos = localStorage.getItem('todos') || "[]";
-  return JSON.parse(todos);
+  try {
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    return Array.isArray(todos) ? todos : [];
+  } catch {
+    return [];
+  }
 }
 
 // TODO set interval func must be checked
