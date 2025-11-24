@@ -18,6 +18,7 @@ function addTodo() {
   if (todoText.length > 0) {
     allTodos.push(todoText);
     updateTodoList(); // to add to the page;
+    saveTodos();
     todoInput.value = "";
     console.log(todoText);
   }
@@ -51,5 +52,10 @@ function createTodoItem(todo, todoIndex) {
 }
 
 function saveTodos() {
+  const todosJson = JSON.stringify(allTodos);
   localStorage.setItem('todos', allTodos); //! only string values can be stored in the local storage
 }
+
+
+// TODO set interval func must be checked
+// TODO innerHTML is valunarble to html injection
