@@ -50,6 +50,9 @@ function createTodoItem(todo, todoIndex) {
           </button>
     `;
     const deleteBtn = todoLi.querySelector('.delete-btn');   // every li has its own btn
+    deleteBtn.addEventListener('click', () =>{
+      deleteTodoItem(todoIndex);
+    })
   return todoLi;
 }
 
@@ -65,6 +68,10 @@ function getTodos() {
   } catch {
     return [];
   }
+}
+
+function deleteTodoItem() {
+  allTodos = allTodos.filter((_, i) => i !== todoIndex);
 }
 
 // TODO set interval func must be checked
