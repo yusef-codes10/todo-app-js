@@ -72,6 +72,8 @@ function getTodos() {
 
 function deleteTodoItem() {
   allTodos = allTodos.filter((_, i) => i !== todoIndex);
+  saveTodos();
+  updateTodoList();
 }
 
 // TODO set interval func must be checked
