@@ -6,7 +6,8 @@ const todoForm = document.querySelector("form");
 const todoInput = document.getElementById("todoInput");
 const todoListUl = document.getElementById("todoList");
 
-let allTodos = []; // empty array to stor todos
+let allTodos = getTodos(); // empty array to stor todos
+console.log(allTodos);
 
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -56,6 +57,11 @@ function saveTodos() {
   localStorage.setItem('todos', allTodos); //! only string values can be stored in the local storage
 }
 
+function getTodos() {
+  const todos = localStorage.getItem('todos') || "[]";
+  return JSON.parse(todos);
+}
 
 // TODO set interval func must be checked
 // TODO innerHTML is valunarble to html injection
+// TODO we have to save todos, then load them from the storage
