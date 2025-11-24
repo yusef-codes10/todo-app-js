@@ -49,3 +49,7 @@ function createTodoItem(todo, todoIndex) {
     `;
   return todoLi;
 }
+
+function saveTodos() {
+  localStorage.setItem('todos', allTodos); //! only string values can be stored in the local storage
+}
